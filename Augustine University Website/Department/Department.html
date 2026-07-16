@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Department- Faculty of Computing | Augustine University</title>
+    <link rel="stylesheet" href="/Department/style_dep.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                crimson: "#800020", // Signature Maroon Crimson seen in AUI branding
+                crimsonHover: "#9c1837",
+                gold: "#D4AF37", // Accent gold
+                charcoal: "#2d2d2d",
+                slateGray: "#4b5563",
+                lightBg: "#f9fafb",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              serif: ["Playfair Display", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  
+  <body>
+    <!-- Hero -->
+    <div class="navbar-wrap">
+      <nav class="navbar">
+        <a href="/Home/Home.html" class="navbar-brand">
+          <img src="/Home/Augustine.university.logo.png" alt="AUI Crest" />
+          <span>Augustine University</span>
+        </a>
+        <ul class="navbar-links">
+          <li><a href="/Home/Home.html">Home</a></li>
+          <li><a href="/About/About.html">About</a></li>
+          <li class="dropdown-parent">
+            <a href="/Department/Department.html" class="active">Department</a>
+            <div class="dropdown-menu">
+              <a href="/Department/Department.html#staff">Staff</a>
+              <a href="/Department/Department.html#courses">Courses</a>
+            </div>
+          </li>
+          <li class="dropdown-parent">
+            <a href="/portal.html" class="dropdown-toggle">Student Portal</a>
+            <div class="dropdown-menu">
+              <a href="/portal.html#course-registration">Course Registration</a>
+              <a href="/portal.html#exam-result">Exam Result</a>
+              <a href="/portal.html#payment-receipts">Payment Receipts</a>
+              <a href="/portal.html#student-profile">Student Profile</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+     <!-- MAIN CENTRAL CONTENT CONTAINER WITH TRANSITIONS -->
+    <main
+      id="about-section"
+      class="max-w-6xl mx-auto px-4 md:px-8 py-20 space-y-24 flex-grow"
+    >
+      <!-- SECTION: MEET THE DEAN (Direct matching to video 0:00 & 0:37 of ABOUT and 1 more page...) -->
+      <section
+        id="dean"
+        class="fade-in-on-scroll grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center"
+      >
+        <!-- Portrait Column (Left) with the iconic Proffessor block styling -->
+        <div class="md:col-span-5 flex flex-col items-start relative group">
+          <div
+            class="w-full bg-gray-100 border border-gray-200 relative aspect-[4/5] md:aspect-square overflow-hidden shadow-lg rounded-t-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+          >
+            <img
+              src="IMG-20260519-WA0024.jpg"
+              alt="Mr. ABORISADE D. O."
+              class="w-full h-full object-cover object-center"
+              loading="lazy"
+            />
+            <!-- Floating Ambient Border -->
+            <div
+              class="absolute inset-0 border-2 border-brand-gold/0 group-hover:border-brand-gold/40 transition-all duration-500 rounded-t-2xl"
+            ></div>
+          </div>
+
+          <!-- Signature Bold Crimson Block Label from Video -->
+          <div
+            class="signature-red-block w-full text-white p-5 font-bold shadow-md bg-brand-crimson border-b-4 border-brand-gold rounded-b-2xl"
+          >
+            <p
+              class="text-[11px] text-brand-gold font-bold uppercase tracking-widest mb-1"
+            >
+             Dr. D. OLANIYI 
+            </p>
+            <p class="text-lg uppercase font-serif tracking-normal font-bold">
+                ABORISADE
+            </p>
+          </div>
+        </div>
+
+        <!-- Biography Text Column (Right) -->
+        <div class="md:col-span-7 space-y-6">
+          <div class="space-y-1">
+            <h2
+              class="font-serif text-3xl md:text-4xl font-bold text-brand-crimson tracking-tight"
+            >
+              MEET THE HEAD OF DEPARTMENT
+            </h2>
+            <p
+              class="text-xs font-semibold text-gray-500 uppercase tracking-widest"
+            >
+              HEAD OF DEPARTMENT, FACULTY OF COMPUTING
+            </p>
+          </div>
+
+          <div
+            class="text-gray-700 text-sm md:text-base leading-relaxed space-y-4"
+          >
+            <p>
+              Dr. D. Olaniyi Aborisade is a PhD-holder in Computer Science with over a decade of teaching and research experience. He earned his degrees from FUNAAB, the University of Ibadan, and completed doctoral benchwork at Hochschule Furtwangen University, Germany. An active professional, he is a member of the CPN and NCS, having served as the NCS Ogun State Vice Chairman from 2017 to 2019.
+            </p>
+            <p>
+            His research focuses on Cloud Information Security, Digital Forensics, and his current project, "A DNA-Based Model for Speaker Identification." With approximately 20 publications, he teaches core courses like Database Design, Operating Systems, and Programming. Currently, he serves as the Head of Department (HOD) for the Faculty of Computing at Augustine University.
+            </p>
+          </div>
+
+          <!-- Interactive Details Toggle -->
+          <div class="pt-2">
+            <button
+              onclick="toggleDeanContactModal(true)"
+              class="btn-transition inline-flex items-center space-x-2 text-xs font-bold text-brand-crimson hover:text-brand-gold uppercase tracking-wider py-2 border-b-2 border-brand-crimson hover:border-brand-gold"
+            >
+              <i class="fa-solid fa-address-book text-sm"></i>
+              <span>Contact & Academic Office Details</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION: STAFF PROFILES -->
+      <section id="staff" class="fade-in-on-scroll">
+        <div class="space-y-5">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.3em] text-[#800020]">
+              OUR TEAM
+            </p>
+            <h2 class="font-serif text-3xl font-bold text-[#1a1a1a] mt-3">
+              Department Staff
+            </h2>
+          </div>
+            <div class="staff-grid" id="staffGrid">
+              <div class="staff-card">
+                <img src="JohnBosco.jpg" alt="  Mr. Agbaegbu JohnBosco" />
+                <h3>Mr. Agbaegbu JohnBosco</h3>
+                <p>Lecturer II</p>
+                <button class="view-profile-btn">View Profile</button>
+              </div>
+              <div class="staff-card">
+                <img src="Rufai.jpg" alt="Mr. Rufai Adewole" />
+                <h3>Mr. Rufai Adewole</h3>
+                <p>Visiting Lecturer</p>
+                <button class="view-profile-btn">View Profile</button>
+              </div>
+              <div class="staff-card">
+                <img src="Akinmerese.jpg" alt="Dr. Akinmerese Ebenezer" />
+                <h3>Dr. Akinmerese Ebenezer</h3>
+                <p>Senior Lecturer</p>
+                <button class="view-profile-btn">View Profile</button>
+              </div>
+              <div class="staff-card">
+                <img src="Ibitola.jpg" alt="Mr. Ibitola Ayobami" />
+                <h3>Mr. Ibitola Ayobami</h3>
+                <p>Asst. Lecturer</p>
+                <button class="view-profile-btn">View Profile</button>
+              </div>
+              <div class="staff-card">
+                <img src="Akinyemi.jpg" alt="Prof. Ibidapo Akinyemi" />
+                <h3>Prof. Ibidapo Akinyemi</h3>
+                <p>Senior Lecturer</p>
+                <button class="view-profile-btn">View Profile</button>
+              </div>
+              <div class="staff-card">
+                <img src="Omisore.jpg" alt="Mr. Omisore Ademola" />
+                <h3>Mr. Omisore Ademola </h3>
+                <p>Lecturer II</p>
+                <button class="view-profile-btn">View Profile</button>
+              </div>
+              <div class="staff-card">
+                <img src="Agagu.jpg" alt="Ms. Agagu Modupe" />
+                <h3>Ms. Agagu Modupe</h3>
+                <p>Asst. Lecturer</p>
+                <button class="view-profile-btn">View Profile</button>
+              </div>
+              <div class="staff-card">
+                <img src="Ogunbawo.jpg" alt="Dr. Ogunbawo" />
+                <h3>Dr. Ogunbawo Afolakemi</h3>
+                <p>Adjunct Lecturer</p>
+                <button class="view-profile-btn">View Profile</button>
+              </div>
+              <div class="staff-card">
+                <img src="Egume.jpg" alt="Mr. Egume Onome" />
+                <h3>Mr. Egume Onome</h3>
+                <p>Lecturer II</p>
+                <button class="view-profile-btn">View Profile</button>
+              </div>
+              <div class="staff-card">
+                <img src="Ayo.jpg" alt="Dr. Ayo Femi Emmanuel" />
+                <h3>Dr. Ayo Femi Emmanuel</h3>
+                <p>Lecturer I</p>
+                <button class="view-profile-btn">View Profile</button>
+              </div>
+              <div class="staff-card">
+                <img src="Abel.jpg" alt="Mr. Owolabi Abe" />
+                <h3>Mr. Owolabi Abel</h3>
+                <p>Asst. Lecturer</p>
+                <button class="view-profile-btn">View Profile</button>
+              </div>
+              <div class="staff-card">
+                <img src="Gbenga.jpg" alt="Dr. Ogunsanwo Gbenga" />
+                <h3>Dr. Ogunsanwo Gbenga</h3>
+                <p>Visiting Lecturer</p>
+                <button class="view-profile-btn">View Profile</button>
+              </div>
+              <div class="staff-card">
+                <img src="Adediran.jpg" alt="Dr. Adeniran Adefemi" />
+                <h3>Dr. Adeniran Adefemi</h3>
+                <p>Adjunct Lecturer</p>
+                <button class="view-profile-btn">View Profile</button>
+              </div>
+              <div class="staff-card">
+                <img src="Alao.jpg" alt="Dr. Mogbademu Sanwo " />
+                <h3>Dr. Mogbademu Sanwo </h3>
+                <p>Visiting Lecturer</p>
+                <button class="view-profile-btn">View Profile</button>
+              </div>
+              <div class="staff-card">
+                <img src="Akinola.jpg" alt="Mr. Akinola James Olufemi" />
+                <h3>Mr. Akinola James Olufemi</h3>
+                <p>Part Time Lecturer</p>
+                <button class="view-profile-btn">View Profile</button>
+              </div>
+        </div>
+      </section>
+
+      <!-- INTERACTIVE MODAL: DEAN CREDENTIALS -->
+    <div
+      id="dean-modal"
+      class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-gray-900/60 backdrop-blur-sm transition-all duration-300"
+    >
+      <div
+        class="bg-white rounded-3xl max-w-lg w-full p-6 md:p-8 shadow-2xl relative border border-gray-100 transform scale-95 opacity-0 transition-all duration-300"
+        id="dean-modal-content"
+      >
+        <button
+          onclick="toggleDeanContactModal(false)"
+          class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+        >
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+        <h3 class="font-serif text-2xl font-bold text-brand-crimson mb-4">
+          Academic & Office Profile
+        </h3>
+        <div class="space-y-4 text-sm text-gray-600">
+          <p>
+            <strong>Full Title:</strong> Dr. D. Olaniyi Aborisade, PhD
+          </p>
+          <p>
+            <strong>Official Designation:</strong> Head of Department, Faculty of Computing
+          </p>
+          <p>
+            <strong>Primary Contact Address:</strong>
+            hod.computing@augustineuniversity.edu.ng
+          </p>
+          <p><strong>Office Hours:</strong> Mon - Fri, 9:00 AM - 4:00 PM</p>
+          <p>
+            <strong>Administrative Assistant Contact:</strong>
+            admin.computing@augustineuniversity.edu.ng
+          </p>
+        </div>
+        <div class="mt-6">
+          <button
+            onclick="toggleDeanContactModal(false)"
+            class="w-full bg-brand-crimson hover:bg-brand-crimsonHover text-white font-bold uppercase tracking-wider text-xs py-3 rounded-xl btn-transition"
+          >
+            Close Details
+          </button>
+        </div>
+      </div>
+    </div>
+<script>
+
+     // Scroll Animation Observer Setup
+      document.addEventListener("DOMContentLoaded", () => {
+        const observerOptions = {
+          root: null,
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target); // Trigger only once
+            }
+          });
+        }, observerOptions);
+
+        const fadeElements = document.querySelectorAll(".fade-in-on-scroll");
+        fadeElements.forEach((el) => observer.observe(el));
+      });
+
+ // Header Background Scroll Transition
+      window.addEventListener("scroll", () => {
+        const header = document.getElementById("main-header");
+        if (window.scrollY > 40) {
+          header.classList.remove("bg-transparent", "py-4");
+          header.classList.add(
+            "bg-white/80",
+            "backdrop-blur-md",
+            "shadow-sm",
+            "py-2",
+          );
+        } else {
+          header.classList.remove(
+            "bg-white/80",
+            "backdrop-blur-md",
+            "shadow-sm",
+            "py-2",
+          );
+          header.classList.add("bg-transparent", "py-4");
+        }
+      });
+
+      // Dean Modal Logic
+      function toggleDeanContactModal(show) {
+        const modal = document.getElementById("dean-modal");
+        const modalContent = document.getElementById("dean-modal-content");
+        if (show) {
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+          setTimeout(() => {
+            modalContent.classList.remove("scale-95", "opacity-0");
+            modalContent.classList.add("scale-100", "opacity-100");
+          }, 10);
+        } else {
+          modalContent.classList.remove("scale-100", "opacity-100");
+          modalContent.classList.add("scale-95", "opacity-0");
+          setTimeout(() => {
+            modal.classList.remove("flex");
+            modal.classList.add("hidden");
+          }, 300);
+        }
+      }
+
+</script>
+    </body>
+</html>

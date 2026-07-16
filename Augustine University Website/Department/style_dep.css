@@ -1,0 +1,326 @@
+:root {
+  --red: #8b0000;
+  --red-dark: #6e0000;
+  --grey-bg: #f2f2f2;
+  --text: #1a1a1a;
+  --white: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  color: var(--text);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 38px;
+  background: #ececec;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 36px;
+  gap: 32px;
+  z-index: 900;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  color: #666;
+}
+.top-bar a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.top-bar a:hover,
+.top-bar a.active {
+  color: var(--text);
+}
+
+/* Dropdown hover bridge - keeps menu visible when moving mouse to it */
+.navbar-links li.dropdown-parent::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: -20px;
+  right: -20px;
+  height: 12px;
+  pointer-events: auto;
+}
+
+/* Dropdown menu styling */
+.navbar-links .dropdown-parent {
+  position: relative;
+}
+
+.navbar-links .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  width: 240px;
+  background: var(--white);
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition:
+    opacity 0.2s,
+    visibility 0.2s,
+    transform 0.2s;
+  z-index: 50;
+}
+
+.navbar-links .dropdown-parent:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.navbar-links .dropdown-menu a {
+  display: block;
+  padding: 12px 16px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition:
+    background 0.15s,
+    color 0.15s;
+  border: none;
+}
+
+.navbar-links .dropdown-menu a:first-child {
+  border-radius: 11px 11px 0 0;
+}
+
+.navbar-links .dropdown-menu a:last-child {
+  border-radius: 0 0 11px 11px;
+}
+
+.navbar-links .dropdown-menu a:hover {
+  background: rgba(139, 0, 0, 0.08);
+  color: var(--red);
+}
+/* ── PILL NAVBAR ── */
+
+.navbar-wrap {
+  position: fixed;
+  top: 46px;
+  left: 0;
+  right: 0;
+  z-index: 800;
+  display: flex;
+  justify-content: center;
+  padding: 0 24px;
+}
+.navbar {
+  background: var(--white);
+  border-radius: 999px;
+  padding: 8px 28px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1300px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.13);
+}
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text);
+  margin-right: auto;
+}
+.navbar-brand img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+.navbar-brand span {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  font-weight: 700;
+}
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 44px;
+  list-style: none;
+}
+.navbar-links a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  transition: color 0.2s;
+}
+.navbar-links a:hover {
+  color: var(--red);
+}
+.navbar-links a.active {
+  color: var(--red);
+}
+
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fade-in-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+  margin-top: 2rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding-bottom: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.staff-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+  overflow: hidden;
+  text-align: center;
+  padding: 0.85rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.staff-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+}
+
+.staff-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
+
+.staff-card h3 {
+  margin: 0.85rem 0 0.15rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+.staff-card p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.staff-card .view-profile-btn {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: var(--red);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.staff-card .view-profile-btn:hover {
+  background: var(--red-dark);
+  transform: translateY(-2px);
+}
+
+.staff-carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .staff-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .staff-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.navbar-links .dropdown-parent > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  font-weight: 700;
+}
+
+.navbar-links .dropdown-parent > a::after {
+  content: "▼";
+  font-size: 10px;
+  color: var(--text);
+  transition: transform 0.2s ease;
+}
+
+.navbar-links .dropdown-parent:hover > a::after {
+  transform: translateY(1px);
+}
+.dropdown-menu a {
+  display: block;
+  padding: 12px 16px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 10000;
+  transition:
+    background 0.15s,
+    color 0.15s;
+  font-style: bold;
+  text-emphasis-color: var(--grey-bg);
+}
+
+/* Dropdown hover bridge - keeps menu visible when moving mouse to it */
+.navbar-links li.dropdown-parent::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: -20px;
+  right: -20px;
+  height: 12px;
+  pointer-events: auto;
+}
