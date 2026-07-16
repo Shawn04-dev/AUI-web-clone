@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Augustine University Website — Index</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body { font-family: system-ui, Arial; margin: 24px; max-width: 980px; }
+    nav ul { list-style: none; padding: 0; display: flex; gap: 16px; }
+    nav a { text-decoration: none; color: #0366d6; }
+    .gallery { display:flex; flex-wrap:wrap; gap:12px; margin-top:12px; }
+    .thumb { width:150px; height:100px; object-fit:cover; border:1px solid #ddd; }
+    section { margin-top:24px; }
+    pre.path { background:#f6f8fa; padding:8px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <h1>Augustine University Website</h1>
+
+  <nav>
+    <ul>
+      <li><a href="Home/Home.html">Home</a></li>
+      <li><a href="About/About.html">About</a></li>
+      <li><a href="Department/Department.html">Department</a></li>
+    </ul>
+  </nav>
+
+  <section>
+    <h2>Pages</h2>
+    <ul>
+      <li><a href="Home/Home.html">Home/Home.html</a></li>
+      <li><a href="About/About.html">About/About.html</a></li>
+      <li><a href="Department/Department.html">Department/Department.html</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Images (quick gallery)</h2>
+    <div class="gallery">
+      <!-- Examples — add more following the same pattern -->
+      <a href="Home/AUI.jpg"><img class="thumb" src="Home/AUI.jpg" alt="AUI"></a>
+      <a href="About/AUI.jpg"><img class="thumb" src="About/AUI.jpg" alt="AUI (about)"></a>
+      <a href="Department/Augustine.university.logo.png"><img class="thumb" src="Department/Augustine.university.logo.png" alt="Logo"></a>
+    </div>
+    <p>Add or remove image entries by copying the <code>&lt;a&gt;&lt;img&gt;</code> block above and adjusting the relative path.</p>
+  </section>
+
+  <section>
+    <h2>Notes on relative linking</h2>
+    <ul>
+      <li>If an HTML page is in Home/, link its CSS like: <pre class="path">&lt;link rel="stylesheet" href="Home/style_hom.css"&gt;</pre></li>
+      <li>From About/About.html link to its CSS as: <pre class="path">&lt;link rel="stylesheet" href="About/style_abt.css"&gt;</pre></li>
+      <li>From Department/Department.html link to its CSS as: <pre class="path">&lt;link rel="stylesheet" href="Department/style_dep.css"&gt;</pre></li>
+      <li>If you plan to serve the site from the repo root, the links above work as-is. If you move CSS into a shared folder (e.g., <code>css/</code>), update all pages to that new relative path.</li>
+    </ul>
+  </section>
+
+  <footer style="margin-top:32px;color:#666">Index generated for repository pages and images. Update as you add/remove files.</footer>
+</body>
+</html>
